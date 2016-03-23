@@ -1,14 +1,10 @@
 #!/bin/bash
 
 source ACCESS_TOKEN.sh
+source VARS.sh
 
-ENDPOINT=https://www.googleapis.com/fitness/v1/users/me
 DATASET=dataset:aggregate
-
 DATASOURCE=derived:com.google.step_count.delta:com.google.android.gms:estimated_steps
-
-now=`date +%s`
-start_of_day=$(echo "$now - ($now % 86400)" | bc)
 
 json="{
   \"aggregateBy\": [{
@@ -16,8 +12,8 @@ json="{
       \"$DATASOURCE\"
   }],
   \"bucketByTime\": { \"durationMillis\": 86400000 },
-  \"startTimeMillis\": ${start_of_day}000,
-  \"endTimeMillis\": ${now}000
+  \"startTimeMillis\": ${START_OF_DAY}000,
+  \"endTimeMillis\": ${NOW}000
 }"
 
 url=$ENDPOINT/$DATASET

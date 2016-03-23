@@ -1,8 +1,7 @@
 #!/bin/sh
 
 source ACCESS_TOKEN.sh
-
-ENDPOINT=https://www.googleapis.com/fitness/v1/users/me/dataSources
+source VARS.sh
 
 DATASET_1=derived:com.google.calories.expended:com.google.android.gms:from_bmr
 DATASET_2=derived:com.google.calories.expended:com.google.android.gms:from_activities
@@ -13,14 +12,7 @@ DATASET_6=derived:com.google.calories.bmr:com.google.android.gms:merged
 
 DATASET=$DATASET_1
 
-now=`date +%s`
-start_of_day=$(echo "$now - ($now % 86400)" | bc)
-
-# echo `date -r $start_of_day`
-# echo `date -r $now`
-# echo
-
-url=$ENDPOINT/$DATASET/datasets/${start_of_day}000000000-${now}000000000
+url=$ENDPOINT/dataSources/$DATASET/datasets/${START_OF_DAY}000000000-${NOW}000000000
 echo $url; echo
 
 curl \

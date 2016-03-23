@@ -1,15 +1,12 @@
 #!/bin/sh
 
 source ACCESS_TOKEN.sh
+source VARS.sh
 
-ENDPOINT=https://www.googleapis.com/fitness/v1/users/me/dataSources
 DATASOURCE=derived:com.google.step_count.delta:com.google.android.gms:estimated_steps
 
-now=`date +%s`
-start_of_day=$(echo "$now - ($now % 86400)" | bc)
-
 # need to convert seconds to nanoseconds
-url=$ENDPOINT/$DATASOURCE/datasets/${start_of_day}000000000-${now}000000000
+url=$ENDPOINT/dataSources/$DATASOURCE/datasets/${START_OF_DAY}000000000-${NOW}000000000
 echo $url; echo
 
 curl \
