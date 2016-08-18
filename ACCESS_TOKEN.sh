@@ -1,5 +1,0 @@
-#!/bin/sh
-
-ACCESS_TOKEN=\
-ya29.CjBBA9YG5zAAnxKByh_KBuQJhNRQT05tvgdCcZsW0hhYVoqK0BgSNyZX0Ys2EUiHStI
-
