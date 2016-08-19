@@ -6,7 +6,7 @@ source VARS.sh
 DATASET=dataSources
 
 json="{
-  \"dataStreamName\": \"MyDataSource\",
+  \"dataStreamName\": \"MyNutritionDataSource\",
   \"type\": \"raw\",
   \"application\": {
     \"detailsUrl\": \"http://example.com\",

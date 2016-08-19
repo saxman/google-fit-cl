@@ -4,7 +4,7 @@ source ACCESS_TOKEN.sh
 source VARS.sh
 
 DATASET=dataset:aggregate
-DATASOURCE=raw:com.google.nutrition:407408718192:MyDataSource
+DATASOURCE=raw:com.google.nutrition:407408718192:MyNutritionDataSource
 
 json="{
   \"aggregateBy\": [{

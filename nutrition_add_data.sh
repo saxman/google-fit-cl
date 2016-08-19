@@ -4,7 +4,7 @@ source ACCESS_TOKEN.sh
 source VARS.sh
 
 DATASET=dataSources
-DATASOURCE=raw:com.google.nutrition:407408718192:MyDataSource
+DATASOURCE=raw:com.google.nutrition:407408718192:MyNutritionDataSource
 DATATYPE=com.google.nutrition
 
 END_TIME=`expr $NOW_MS + 1`
